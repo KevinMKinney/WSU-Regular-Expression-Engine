@@ -1,0 +1,33 @@
+Project for CS-317
+
+name: Kevin Kinney
+email: kevin.kinney@wsu.edu
+included files:
+	"REE.h" - header file for "REE.c" and "REEfunc.c"
+	"REE.c" - contains the main() function
+	"REEfunc.c" - contains functions that are defined in "REE.h" and used in "REE.c"
+	"Makefile" - a simple makefile to compile commands
+	
+compile and run instructios:
+	while in correct directory with the previously mentioned files, type "make" in the terminal. This will build and run the program, but you can also type "make run" to just run the program.
+	
+	Assuming the program is running, you should be prompt with the message: "Enter regular expression:". from there, you can enter any combination of 'a', 'b', 'c', 'd', 'e', or 'E'. You can also use the '*' or '|', provided there are two letters in before them.
+	
+	some examples of valid regular expressions: "aaaaa", "a*b|", and "ab|c*a".
+	some examples of non-valid regular expressions: "a|", "*a", and "f".
+	
+	if your input is not valid, you will see "not a valid regular expression" and will need to run the program again.
+	
+	if your input is accepted, then you will see a NFA which looks something like this:
+
+Start: q1
+Accept: q2
+(q1, E) -> q2
+(q2, a) -> q3
+(q3, E) -> q2
+	
+	Once finished, you can type "make clean" to remove compiled object files. 
+	
+extra info:
+-due to the way i orded my lists, concatenation ('&') was too difficult for me to implement. This means that RE's with & are seen as not valid.
+-the files are called REE for Regular Expression Engine.
